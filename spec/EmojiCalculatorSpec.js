@@ -22,8 +22,28 @@ describe("EmojiCalculator", function(){
             emoji: "😞",
             emotionValue: -200
         };
+        mockEmoji5 = {
+            emoji: "😐",
+            emotionValue: 0
+        };
+        mockEmoji6 = {
+            emoji: "🙁",
+            emotionValue: -55
+        };
+        mockEmoji7 = {
+            emoji: "😣",
+            emotionValue: -300
+        }
         MockEmojis = [mockEmoji, mockEmoji2];
-        allMockEmojis = [mockEmoji, mockEmoji2, mockEmoji3, mockEmoji4]
+        allMockEmojis = [
+            mockEmoji,
+            mockEmoji2,
+            mockEmoji3,
+            mockEmoji4,
+            mockEmoji5,
+            mockEmoji6,
+            mockEmoji7
+        ]
     })
 
     describe("allEmoValues", function(){
@@ -73,7 +93,13 @@ describe("EmojiCalculator", function(){
 
     describe("calculate", function(){
         it("should find the emoji with the closest emovalue to the sum of both emojis emovals", function(){
-            expect(true).toEqual(true);
+            var testCalculator = new EmojiCalculator(allMockEmojis);
+            expect(testCalculator.calculate(mockEmoji3, mockEmoji6)).toEqual(mockEmoji5);
+        });
+
+        it("should find the emoji with the closest emovalue to the sum of both emojis emovals", function(){
+            var testCalculator = new EmojiCalculator(allMockEmojis);
+            expect(testCalculator.calculate(mockEmoji4, mockEmoji6)).toEqual(mockEmoji7);
         });
     });
 

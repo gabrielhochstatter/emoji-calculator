@@ -19,6 +19,13 @@ class EmojiCalculator {
         return emoValueArray;
     }
 
+    calculate(emoji1, emoji2) {
+        let emoSum = this.calculateNewEmoValue(emoji1, emoji2);
+        let newActualEmoValue = findClosest(emoSum, this.emoValues)
+        let result = this.findByEmoValue(newActualEmoValue);
+        return result;
+    }
+
     calculateNewEmoValue(emoji1, emoji2) {
         let sum = emoji1.emotionValue + emoji2.emotionValue;
         if (sum > 1000) {
@@ -37,6 +44,7 @@ class EmojiCalculator {
             }
         }
     }
+
 }
 
 var findClosest = (num, array) => {
@@ -53,7 +61,28 @@ var findClosest = (num, array) => {
 }
 
 /// POSITIVE FACES
-const grinningFace = new Emoji("😀", 100)
+const slightSmileFace = new Emoji("🙂", 100);
+const upsideSmileFace = new Emoji("🙃", 120)
+const rosySmileFace = new Emoji("😊", 150);
+const winkSmileFace = new Emoji("😉", 170);
+const grinFace = new Emoji("😀", 200);
+const grinFaceBigEyes = new Emoji("😃", 250);
+const grinFaceFull = new Emoji("😁", 300);
+const grinFaceSweat = new Emoji("😅", 400);
+const grinFaceXD = new Emoji("😆", 600);
+const tongueSmile = new Emoji("😋", 185);
+const coolFace = new Emoji("😎", 115);
+const heartEyes = new Emoji("😍", 275);
+const kissFace = new Emoji("😗", 125);
+const kissFaceHeart = new Emoji("😘", 130);
+const kissFaceExtra = new Emoji("😙", 132);
+const kissFaceBlush = new Emoji("😚", 135);
+const memeFace = new Emoji ("😂", 900);
+const roflFace = new Emoji("🤣", 1000);
+const hugFace = new Emoji("🤗", 225);
+const starryEyed = new Emoji("🤩", 700);
+
+
 
 
 /// NEUTRAL FACES
@@ -62,3 +91,33 @@ const neutralFace = new Emoji("😐", 0)
 
 /// NEGATIVE FACES
 const frowningFace = new Emoji("☹️", -100)
+
+
+/// ALL EMOJI ARRAY:
+const allEmoji = [
+    neutralFace,
+    frowningFace,
+    slightSmileFace, 
+    upsideSmileFace,
+    rosySmileFace,
+    winkSmileFace,
+    grinFace,
+    grinFaceBigEyes,
+    grinFaceFull,
+    grinFaceSweat,
+    grinFaceXD,
+    tongueSmile,
+    coolFace,
+    heartEyes,
+    kissFace,
+    kissFaceHeart,
+    kissFaceExtra,
+    kissFaceBlush,
+    memeFace,
+    roflFace,
+    hugFace,
+    starryEyed,
+
+];
+
+var emojiCalculator = new EmojiCalculator(allEmoji);
