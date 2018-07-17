@@ -10,6 +10,13 @@ class EmojiCalculator {
         this.allEmojis = allEmojis;
         this.emoValues = this.allEmoValues();
     }
+    
+    calculate(emoji1, emoji2) {
+        let emoSum = this.calculateNewEmoValue(emoji1, emoji2);
+        let newActualEmoValue = findClosest(emoSum, this.emoValues)
+        let result = this.findByEmoValue(newActualEmoValue);
+        return result;
+    }
 
     allEmoValues() {
         let emoValueArray = [];
@@ -17,13 +24,6 @@ class EmojiCalculator {
             emoValueArray.push(emoji.emotionValue);
         };
         return emoValueArray;
-    }
-
-    calculate(emoji1, emoji2) {
-        let emoSum = this.calculateNewEmoValue(emoji1, emoji2);
-        let newActualEmoValue = findClosest(emoSum, this.emoValues)
-        let result = this.findByEmoValue(newActualEmoValue);
-        return result;
     }
 
     calculateNewEmoValue(emoji1, emoji2) {
@@ -81,16 +81,38 @@ const memeFace = new Emoji ("😂", 900);
 const roflFace = new Emoji("🤣", 1000);
 const hugFace = new Emoji("🤗", 225);
 const starryEyed = new Emoji("🤩", 700);
-
-
+const grinXP = new Emoji("😝", 650);
+const pFace = new Emoji("😛", 160);
+const winkTongue = new Emoji("😜", 190);
+const moneyFace = new Emoji("🤑", 475);
 
 
 /// NEUTRAL FACES
-const neutralFace = new Emoji("😐", 0)
+const neutralFace = new Emoji("😐", 0);
+const thinkingFace = new Emoji("🤔", 10);
+const raisedEyebrow = new Emoji("🤨", -10);
+const boredFace = new Emoji("😑", -15);
+const noMouth = new Emoji("😶", 7);
+const rollingEyes = new Emoji("🙄", -30);
+const smirkingFace = new Emoji("😏", 35);
+const zipperMouth = new Emoji("🤐", -50);
+const surpriseFace = new Emoji("😮", 50);
+const oohFace = new Emoji("😯", 75);
+const sleepyFace = new Emoji("😪", -60);
+const relievedHappy = new Emoji("😌", 80);
+const droolingFace = new Emoji("🤤", 90);
+const notAmused = new Emoji("😒", -35);
+const disappointedFace = new Emoji("😔", -85);
+const unsureFace = new Emoji("😕", -75);
+const astonishedFace = new Emoji("😲", -55);
+
 
 
 /// NEGATIVE FACES
-const frowningFace = new Emoji("☹️", -100)
+const frowningFace = new Emoji("🙁", -100);
+const painFace = new Emoji("😣", -250);
+const sadRelief = new Emoji("😥", -110);
+const despairFace = new Emoji("😫", -500)
 
 
 /// ALL EMOJI ARRAY:
@@ -117,7 +139,30 @@ const allEmoji = [
     roflFace,
     hugFace,
     starryEyed,
-
+    thinkingFace,
+    raisedEyebrow,
+    grinXP,
+    pFace,
+    boredFace,
+    noMouth,
+    rollingEyes,
+    smirkingFace,
+    zipperMouth,
+    painFace,
+    surpriseFace,
+    sadRelief,
+    oohFace,
+    sleepyFace,
+    despairFace,
+    relievedHappy,
+    droolingFace,
+    winkTongue,
+    notAmused,
+    disappointedFace,
+    unsureFace,
+    astonishedFace,
+    moneyFace,
+    
 ];
 
 var emojiCalculator = new EmojiCalculator(allEmoji);
