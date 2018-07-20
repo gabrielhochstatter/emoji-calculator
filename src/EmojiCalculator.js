@@ -85,6 +85,7 @@ const grinXP = new Emoji("😝", 650);
 const pFace = new Emoji("😛", 160);
 const winkTongue = new Emoji("😜", 190);
 const moneyFace = new Emoji("🤑", 475);
+const angelFace = new Emoji("😇", 800);
 
 
 /// NEUTRAL FACES
@@ -105,6 +106,7 @@ const notAmused = new Emoji("😒", -35);
 const disappointedFace = new Emoji("😔", -85);
 const unsureFace = new Emoji("😕", -75);
 const astonishedFace = new Emoji("😲", -55);
+const monkaS = new Emoji("😳", -20);
 
 
 
@@ -112,7 +114,32 @@ const astonishedFace = new Emoji("😲", -55);
 const frowningFace = new Emoji("🙁", -100);
 const painFace = new Emoji("😣", -250);
 const sadRelief = new Emoji("😥", -110);
-const despairFace = new Emoji("😫", -500)
+const despairFace = new Emoji("😫", -570);
+const confoundedFace = new Emoji("😖", -300);
+const sadFace = new Emoji("😞", -200);
+const worriedFace = new Emoji("😟", -225);
+const puffingAnger = new Emoji("😤", -375);
+const cryingFace = new Emoji("😢", -275);
+const loudCrying = new Emoji("😭", -425);
+const anguishedFace = new Emoji("😧", -150);
+const blueAnguish = new Emoji("😨", -175);
+const despair2 = new Emoji("😩", -500);
+const mindBlown = new Emoji("🤯", -360);
+const theScream = new Emoji("😱", -600);
+const deadFace = new Emoji("😵", -700);
+const angryFace = new Emoji("😠", -450);
+const redAnger = new Emoji("😡", -750);
+const swearingFace = new Emoji("🤬", -900);
+const gonnaPuke = new Emoji("🤢", -550);
+const pukedEverywhere = new Emoji("🤮", -625);
+
+
+
+
+
+
+
+
 
 
 /// ALL EMOJI ARRAY:
@@ -162,6 +189,26 @@ const allEmoji = [
     unsureFace,
     astonishedFace,
     moneyFace,
+    confoundedFace,
+    sadFace,
+    worriedFace,
+    puffingAnger,
+    cryingFace,
+    loudCrying,
+    anguishedFace,
+    blueAnguish,
+    despair2,
+    mindBlown,
+    theScream,
+    monkaS,
+    deadFace,
+    angryFace,
+    redAnger,
+    swearingFace,
+    gonnaPuke,
+    pukedEverywhere,
+
+
     
 ];
 
