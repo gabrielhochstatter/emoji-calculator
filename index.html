@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>🍆 Emoji Calculator 🍆</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    
+    <script src="src/EmojiCalculator.js"></script>
+</head>
+<body style="padding-top: 15px;">
+    <div id="app">
+        <div class="container">
+            <div class="row">
+                <h1>🍆🍆🍆 THE INCREDIBLE EMOJI CALCULATOR 🍆🍆🍆</h1>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                        <button v-for="emoji in allEmoji" @click="setEmoji(emoji, 0)">{{emoji.emoji}}</button>
+                </div>
+                <div class="col-6">
+                    <button v-for="emoji in allEmoji" @click="setEmoji(emoji, 1)">{{emoji.emoji}}</button>
+                </div>
+            </div>
+            
+            <h3 id="e0">Emoji 1: {{selectedEmojis[0].emoji}}</h3>
+            <h3 id="e1">Emoji 2: {{selectedEmojis[1].emoji}}</h3>
+            <button @click="calculate">CALCULATE!</button>
+            <h1>RESULT: {{ result }}</h1>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        var data = {
+            calculator: emojiCalculator,
+            allEmoji: allEmoji,
+            selectedEmojis: [
+                slightSmileFace,
+                frowningFace,
+            ],
+            result: "❓"
+        }
+        var emojiCalc = new Vue({
+            el: '#app',
+            data: data,
+            methods: {
+                calculate: function(){
+                    let result = this.calculator.calculate(this.selectedEmojis[0], this.selectedEmojis[1])
+                    this.result = result.emoji;
+                },
+                setEmoji: function(emoji, num){
+                    this.selectedEmojis[num] = emoji;
+                    let emojiDisplay = document.getElementById("e" + num);
+                    emojiDisplay.innerText = "Emoji " + (num + 1) + ": " + emoji.emoji;
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>

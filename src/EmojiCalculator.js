@@ -28,13 +28,14 @@ class EmojiCalculator {
 
     calculateNewEmoValue(emoji1, emoji2) {
         let sum = emoji1.emotionValue + emoji2.emotionValue;
-        if (sum > 1000) {
-            return 1000;
-        } else if (sum < -1000) {
-            return -1000;
-        } else {
-            return sum;
-        }  
+        // if (sum > 1000) {
+        //     return 1000;
+        // } else if (sum < -1000) {
+        //     return -1000;
+        // } else {
+        //     return sum;
+        // }  
+        return sum;
     }
 
     findByEmoValue(emoVal) {
@@ -132,14 +133,7 @@ const redAnger = new Emoji("😡", -750);
 const swearingFace = new Emoji("🤬", -900);
 const gonnaPuke = new Emoji("🤢", -550);
 const pukedEverywhere = new Emoji("🤮", -625);
-
-
-
-
-
-
-
-
+const specialSauce = new Emoji("🍆", -2000);
 
 
 /// ALL EMOJI ARRAY:
@@ -207,9 +201,7 @@ const allEmoji = [
     swearingFace,
     gonnaPuke,
     pukedEverywhere,
-
-
-    
+    specialSauce,
 ];
 
 var emojiCalculator = new EmojiCalculator(allEmoji);
