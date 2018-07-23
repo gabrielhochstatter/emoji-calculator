@@ -1,0 +1,9 @@
+.emoji-button {
+    font-size: 30px !important;
+    margin: 3px;
+}
+
+.emoji-button:hover {
+    cursor: pointer;
+    background-color: beige;
+}

@@ -48,7 +48,7 @@ class EmojiCalculator {
 
 }
 
-var findClosest = (num, array) => {
+const findClosest = (num, array) => {
     let current = array[0];
     let diff = Math.abs(num - current)
     for (let val = 0; val < array.length; val++) {
@@ -88,6 +88,7 @@ const winkTongue = new Emoji("😜", 190);
 const moneyFace = new Emoji("🤑", 475);
 const angelFace = new Emoji("😇", 800);
 
+const specialSauce = new Emoji("🍆", 2000);
 
 /// NEUTRAL FACES
 const neutralFace = new Emoji("😐", 0);
@@ -133,7 +134,6 @@ const redAnger = new Emoji("😡", -750);
 const swearingFace = new Emoji("🤬", -900);
 const gonnaPuke = new Emoji("🤢", -550);
 const pukedEverywhere = new Emoji("🤮", -625);
-const specialSauce = new Emoji("🍆", -2000);
 
 
 /// ALL EMOJI ARRAY:

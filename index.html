@@ -6,42 +6,53 @@
     <title>🍆 Emoji Calculator 🍆</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    
     <script src="src/EmojiCalculator.js"></script>
 </head>
 <body style="padding-top: 15px;">
     <div id="app">
         <div class="container">
             <div class="row">
-                <h1>🍆🍆🍆 THE INCREDIBLE EMOJI CALCULATOR 🍆🍆🍆</h1>
+                <div class="col-12 text-center">
+                    <h1>🍆🍆🍆 THE INCREDIBLE EMOJI CALCULATOR 🍆🍆🍆</h1>
+                </div>
             </div>
             <div class="row">
                 <div class="col-6">
-                        <button v-for="emoji in allEmoji" @click="setEmoji(emoji, 0)">{{emoji.emoji}}</button>
+                    <h3>Emoji 1: <span id="e0">{{selectedEmojis[0].emoji}}</span></h3>
+                    <button class="emoji-button" v-for="emoji in allEmoji" @click="setEmoji(emoji, 0)">{{emoji.emoji}}</button>
                 </div>
                 <div class="col-6">
-                    <button v-for="emoji in allEmoji" @click="setEmoji(emoji, 1)">{{emoji.emoji}}</button>
+                    <h3>Emoji 2: <span id="e1">{{selectedEmojis[1].emoji}}</span></h3>
+                    <button class="emoji-button" v-for="emoji in allEmoji" @click="setEmoji(emoji, 1)">{{emoji.emoji}}</button>
                 </div>
             </div>
             
-            <h3 id="e0">Emoji 1: {{selectedEmojis[0].emoji}}</h3>
-            <h3 id="e1">Emoji 2: {{selectedEmojis[1].emoji}}</h3>
-            <button @click="calculate">CALCULATE!</button>
-            <h1>RESULT: {{ result }}</h1>
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <br>
+                    <h1>
+                        <span id="e0">{{selectedEmojis[0].emoji}}</span> + <span id="e1">{{selectedEmojis[1].emoji}}</span> = {{ result }}
+                    </h1>
+
+                </div>
+            </div>
 
         </div>
 
     </div>
 
     <script>
+        const questionMark = new Emoji("❓", 0);
 
         var data = {
             calculator: emojiCalculator,
             allEmoji: allEmoji,
             selectedEmojis: [
-                slightSmileFace,
-                frowningFace,
+                questionMark,
+                questionMark,
             ],
             result: "❓"
         }
@@ -55,9 +66,11 @@
                 },
                 setEmoji: function(emoji, num){
                     this.selectedEmojis[num] = emoji;
-                    let emojiDisplay = document.getElementById("e" + num);
-                    emojiDisplay.innerText = "Emoji " + (num + 1) + ": " + emoji.emoji;
-                    
+                    let emojiDisplay = document.getElementsByClassName("e" + num);
+                    for (element of emojiDisplay) {
+                        element.innerText = emoji.emoji;
+                    }
+                    this.calculate();
                 }
             }
         })
