@@ -1,4 +1,4 @@
-#Emoji Calculator 💯 
+#Emoji Calculator 
 
 A simple website that calculates the sum of two emojis by their "emotional value". 
 
@@ -13,4 +13,6 @@ Right now it's just faces since I honestly have no clue what happens when you ad
 - Vue.js 🎛
 - Obviously some HTML and CSS 🔩
 
-At some point this will be deployed somewhere once I get the Vue templates working correctly 🐿
+### Play with it here:
+
+[LINK!](https://infallible-bhaskara-84ca2b.netlify.com/)
