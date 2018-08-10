@@ -28,13 +28,6 @@ class EmojiCalculator {
 
     calculateNewEmoValue(emoji1, emoji2) {
         let sum = emoji1.emotionValue + emoji2.emotionValue;
-        // if (sum > 1000) {
-        //     return 1000;
-        // } else if (sum < -1000) {
-        //     return -1000;
-        // } else {
-        //     return sum;
-        // }  
         return sum;
     }
 
