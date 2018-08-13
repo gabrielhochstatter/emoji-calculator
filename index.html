@@ -3,27 +3,27 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>🍆 Emoji Calculator 🍆</title>
+    <title>Emoji Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="main.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="src/EmojiCalculator.js"></script>
 </head>
-<body style="padding-top: 15px;">
+<body>
     <div id="app">
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1>🍆🍆🍆 THE INCREDIBLE EMOJI CALCULATOR 🍆🍆🍆</h1>
+                    <h1 class="">THE INCREDIBLE EMOJI CALCULATOR</h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-6">
+                <div class="col-6 text-center">
                     <h3>Emoji 1: <span id="e0">{{selectedEmojis[0].emoji}}</span></h3>
-                    <button class="emoji-button" v-for="emoji in allEmoji" @click="setEmoji(emoji, 0)">{{emoji.emoji}}</button>
+                    <button class="emoji-button fade-in one" v-for="emoji in allEmoji" @click="setEmoji(emoji, 0)">{{emoji.emoji}}</button>
                 </div>
-                <div class="col-6">
+                <div class="col-6 text-center">
                     <h3>Emoji 2: <span id="e1">{{selectedEmojis[1].emoji}}</span></h3>
                     <button class="emoji-button" v-for="emoji in allEmoji" @click="setEmoji(emoji, 1)">{{emoji.emoji}}</button>
                 </div>

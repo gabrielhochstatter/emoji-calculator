@@ -64,19 +64,6 @@ describe("EmojiCalculator", function(){
             expect(testCalculator.calculateNewEmoValue(mockEmoji2, mockEmoji3)).toEqual(150);
             expect(testCalculator.calculateNewEmoValue(mockEmoji2, mockEmoji4)).toEqual(-100);
         });
-
-        // it("should return 1000 if sum is >1000", function(){
-        //     var testCalculator = new EmojiCalculator(MockEmojis);
-        //     expect(testCalculator.calculateNewEmoValue(mockEmoji, mockEmoji2)).toEqual(1000);
-        // });
-
-        // it("should return -1000 if sum is <-1000", function(){
-        //     var testCalculator = new EmojiCalculator(MockEmojis);
-        //     var mockSadEmoji = {
-        //         emotionValue: -1000
-        //     };
-        //     expect(testCalculator.calculateNewEmoValue(mockSadEmoji, mockEmoji4)).toEqual(-1000);
-        // });
     });
 
     describe("findByEmoValue", function(){

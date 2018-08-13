@@ -1,9 +1,19 @@
 .emoji-button {
-    font-size: 30px !important;
+    font-size: 36px !important;
     margin: 3px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-color: rgb(255, 238, 0);
+    width: 60px;
+    height: 60px;
 }
 
 .emoji-button:hover {
     cursor: pointer;
     background-color: beige;
+}
+
+body {
+    padding-top: 15px;
+    
 }
